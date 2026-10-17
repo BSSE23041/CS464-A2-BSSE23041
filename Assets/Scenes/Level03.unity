@@ -5280,6 +5280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7068485270140622504, guid: 1c2e2366ac9c70d409221ab7eb5d183f, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: cce8096f08ad36946a6ebd0b1cc3fd6d, type: 2}
     - target: {fileID: 7405891018756659869, guid: 1c2e2366ac9c70d409221ab7eb5d183f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.65
@@ -5339,6 +5343,14 @@ PrefabInstance:
     - target: {fileID: 7421461669719215374, guid: 298815460758ee44cb558bea1fc0bdc0, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787536079722983177, guid: 298815460758ee44cb558bea1fc0bdc0, type: 3}
+      propertyPath: offset.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787536079722983177, guid: 298815460758ee44cb558bea1fc0bdc0, type: 3}
+      propertyPath: offset.z
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 7787536079722983177, guid: 298815460758ee44cb558bea1fc0bdc0, type: 3}
       propertyPath: roomBounds
