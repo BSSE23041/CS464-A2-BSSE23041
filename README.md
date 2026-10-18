@@ -1,6 +1,6 @@
 # CS464 Assignment 02 · Fasiha Rohail · BSSE23041
 
-- **Video:** [add your YouTube (unlisted) or Google Drive link here]
+- **Video:** 
 - **Input:** Legacy Input with Active Input Handling set to Both. All keys are read in `Update`.
 - **Ground check:** `Physics.CheckSphere` at the feet of the player (radius 0.2 m). Only the Ground layer is in the mask, so the player's own collider is never hit. The sphere is drawn as a gizmo, green when grounded and red in the air.
 - **Camera:** Exact smoothing in `LateUpdate` with `1 - e^(-sharpness * dt)`, plus look-ahead from the player's speed. The camera looks at the point it is aiming at, not at the player.
