@@ -15,7 +15,7 @@
 | Time to apex | 0.61 s | This comes from the jump height: 5.94 m/s divided by 9.81 gives about 0.61 s. |
 | Fall multiplier | 2.2x | The jump goes up for 0.61 s but comes down in 0.41 s. Jerry lands fast, which helps when obstacles are close together. |
 | Coyote time | 0.1 s | At 5 m/s that is 0.5 m past the edge. If Jerry runs off an obstacle and presses jump a little late, it still works. |
-| Jump buffer | 0.12 s | A press up to 0.12 s before landing still jumps on landing. This helps in level 3 where obstacles are close and jumps follow each other. |
+| Jump buffer | 0.12 s | A press up to 0.12 s before landing still jumps on landing. This helps in level 5 where obstacles are close and jumps follow each other. |
 | Camera smoothing | sharpness 5 | The camera trails Jerry by about 1 m at 5 m/s (speed divided by sharpness). It feels smooth but still keeps up, and it looks the same at any frame rate. |
 | Look-ahead | 0.35 s | 0.35 s at 5 m/s is 1.75 m, so the camera looks a bit ahead of Jerry and the player can see what is coming. |
 
@@ -30,6 +30,6 @@
 
 | Level | What the controller must do there | What I changed for this jump |
 |---|---|---|
-| Level01 | Run to the hiding spot and jump over a few simple obstacles. There is plenty of space, so this is where the player learns the controls. | Nothing. The jump already clears every obstacle. |
-| Level02 | Jump over more obstacles in a tighter space and reach more than one hiding spot, using the camera to see ahead. | Nothing. The jump already clears every obstacle. |
-| Level03 | Jump over many obstacles in a row in a small space and get to the hiding spots. The coyote time and jump buffer help here because the jumps follow each other quickly. | Nothing. The jump already clears every obstacle. |
+| Level03 | Run to the hiding spot and jump over a few simple obstacles. There is plenty of space, so this is where the player learns the controls. | Nothing. The jump already clears every obstacle. |
+| Level04 | Jump over more obstacles in a tighter space and reach more than one hiding spot, using the camera to see ahead. | Nothing. The jump already clears every obstacle. |
+| Level05 | Jump over many obstacles in a row in a small space and get to the hiding spots. The coyote time and jump buffer help here because the jumps follow each other quickly. | Nothing. The jump already clears every obstacle. |
