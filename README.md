@@ -1,6 +1,6 @@
 # CS464 Assignment 02 · Fasiha Rohail · BSSE23041
 
-- **Video:** 
+- **Video:** https://youtu.be/mwm_WCL977I
 - **Input:** Legacy Input with Active Input Handling set to Both. All keys are read in `Update`.
 - **Ground check:** `Physics.CheckSphere` at the feet of the player (radius 0.2 m). Only the Ground layer is in the mask, so the player's own collider is never hit. The sphere is drawn as a gizmo, green when grounded and red in the air.
 - **Camera:** Exact smoothing in `LateUpdate` with `1 - e^(-sharpness * dt)`, plus look-ahead from the player's speed. The camera looks at the point it is aiming at, not at the player.
@@ -24,7 +24,7 @@
 1. **The jump, in numbers.** The jump height is 1.8 m and gravity is 9.81, so the launch speed is v = sqrt(2 x 9.81 x 1.8), which is about 5.94 m/s. The mass is 1 kg, so the jump force (mass x v) is also 5.94. It takes about 0.61 s to reach the top. With the fall multiplier of 2.2 the way down takes about 0.41 s, so a whole jump lasts about 1.02 s. At 5 m/s that carries Jerry about 5.1 m forward. My levels have no gaps, only obstacles to jump over, and the jump goes 1.8 m high, so it clears all of them.
 2. **Update and FixedUpdate.** In `Update` the script reads the keys, works out the move direction from the camera, checks the ground, keeps the coyote and buffer timers, queues the jump and starts the squash. In `FixedUpdate` it sets the velocity from the move direction (keeping the up and down speed), turns Jerry to face where he is going, does the queued jump once, and adds the extra gravity when falling. If I swapped them, the jump key would often be missed, because a key press only lasts one frame and `FixedUpdate` does not run on every frame (at 144 fps about two frames in three have no `FixedUpdate`). The physics would also be mixed up with the frame rate.
 3. **Vector3.Dot.** I did not use `Vector3.Dot` in my code. What I really used was `Vector3.ClampMagnitude` (so diagonal movement is not faster), `Vector3.Lerp` and `LerpUnclamped` (camera and squash), `Quaternion.Slerp` and `LookRotation` (turning Jerry), `Mathf.Exp` (camera smoothing), `Mathf.Sqrt` (jump speed) and `Physics.CheckSphere` (ground check). Where it could go: `Vector3.Dot(transform.forward, move)`. If the result is positive, Jerry is moving the way he is facing. If it is negative, he is moving backwards. If it is close to 0, he is moving sideways. It could be used for a different animation or sound when he moves backwards.
-4. **The juice.** The effect is a squash on landing, and the curve is `Ease.OutBack`. It lasts 0.2 s, which is 12 frames at 60 fps. The first quarter (about 3 frames) squashes Jerry down, and the other 9 frames spring him back with a small overshoot. I kept it short because in level 3 the jumps come quickly, and a longer squash would still be playing when Jerry jumps again. It is still long enough to see.
+4. **The juice.** The effect is a squash on landing, and the curve is `Ease.OutBack`. It lasts 0.2 s, which is 12 frames at 60 fps. The first quarter (about 3 frames) squashes Jerry down, and the other 9 frames spring him back with a small overshoot. I kept it short because in level 5 the jumps come quickly, and a longer squash would still be playing when Jerry jumps again. It is still long enough to see.
 
 ## Levels
 
